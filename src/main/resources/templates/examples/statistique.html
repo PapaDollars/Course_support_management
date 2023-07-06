@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Support
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> <!-- CSS Files -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="/demo/demo.css" rel="stylesheet" />
+  <!-- Bootstrap 5 CSS -->
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'>
+  <!-- Font Awesome CSS -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+  <!-- Google Fonts -->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap'>
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+</head>
+
+<body cz-shortcut-listen="true">
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 p-4">
+    <div class="container-fluid">
+      <div class="row justify-content-lg-evenly collapse navbar-collapse" id="navbarCollapse">
+        <div class="col-5" >
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active  text-warning fs-5" aria-current="page" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> Add course </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/statistique">Statistiques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user">Profiles</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3" >
+          <form class="col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/search" method="post" id="searchForm">
+            <input  class="form-control mx-2" type="text" name="search" placeholder="Example Search : ' ict318 '" aria-label="Search">
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>
+<!-- End Navbar -->
+
+
+<div class="card-body">
+  STATISTIQUES
+  <div class="table-responsive" id="table1" >
+    <table class="table">
+      <thead class="text-primary">
+      <th>
+        Name
+      </th>
+      <th>
+        Country
+      </th>
+      <th>
+        City
+      </th>
+      <th>
+        Salary
+      </th>
+      <th class="text-right">
+        Actions
+      </th>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          Dakota Rice
+        </td>
+        <td>
+          Niger
+        </td>
+        <td>
+          000000000000000
+        </td>
+        <td>
+          $36,738
+        </td>
+        <td class="text-right">
+          <a href="#" class="btn btn-primary">Lire</a>
+          <a href="#" class="btn btn-info">Editer</a>
+          <a href="#" class="btn btn-danger">Supprimer</a>
+        </td>
+      </tr>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Modal ajouter cours-->
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><span class="text-warning">ADD </span>one course</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/addCours" method="post" id="monFormulaire">
+          <div class="form-group">
+            <label for="code">Code:</label>
+            <input type="text" class="form-control" id="code" name="code" required>
+          </div>
+          <div class="form-group">
+            <label for="intitule">Intitulé:</label>
+            <input type="text" class="form-control" id="intitule" name="intitule" required>
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="nom_auteur">Auteur:</label>
+            <input type="text" class="form-control" id="nom_auteur" name="auteur" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-warning">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal modifier-->
+
+<div class="modal fade" id="modifier" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticModifier" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticModifier"><span class="text-warning">ADD </span>one course</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/modifierCours" method="post" id="monFormulaireM">
+          <div class="form-group">
+            <input type="hidden" class="form-control" id="codeM" name="code" >
+          </div>
+          <div class="form-group">
+            <label for="intituleM">Intitulé:</label>
+            <input type="text" class="form-control" id="intituleM" name="intitule">
+          </div>
+          <div class="form-group">
+            <label for="descriptionM">Description:</label>
+            <textarea id="descriptionM" name="description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="nom_auteurM">Auteur:</label>
+            <input type="text" class="form-control" id="nom_auteurM" name="auteur">
+          </div>
+          <div class="modal-footer">
+
+            <button type="submit" class="btn btn-success">Edit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<footer class="container-fluid">
+
+  <div class="container py-4">
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Go to dashboard</h2>
+          <p>Ce projet a pour but de travailler sur le modèle MVC (Modèle, Vue, Contrôleur) et
+            l’organisation du codage dans le cadre d’application web complexe.</p>
+          <a class="btn btn-outline-light" href="/dashboard">Dashboard</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-warning border rounded-3">
+          <h2>Add course</h2>
+          <p>Ce projet a pour but de travailler sur le modèle MVC (Modèle, Vue, Contrôleur) et
+            l’organisation du codage dans le cadre d’application web complexe.</p>
+
+          <a class="btn btn-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Button add</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</footer>
+<footer class="container-fluid bg-dark  text-center mt-4 text-muted border-top p-4">
+  Copyright @PapaDollar - Project_ict308
+</footer>
+
+
+</main>
+
+
+<script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!--   Core JS Files   -->
+<script src="/js/core/jquery.min.js"></script>
+<script src="/js/core/popper.min.js"></script>
+<script src="/js/core/bootstrap.min.js"></script>
+<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="/js/plugins/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+
+<script src="/demo/demo.js"></script>
+
+<script>
+  $('#Modifier').on('show.bs.modal', function(event) {
+    var button = $(event.relatedTarget);
+    var coursCode = button.data('cours-code');
+    var modal = $(this);
+    modal.find('#codeM').val(coursCode);
+  });
+</script>
+</body>
+
+</html>
