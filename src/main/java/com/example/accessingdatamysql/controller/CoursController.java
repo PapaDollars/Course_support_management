@@ -78,4 +78,21 @@ public class CoursController {
         return "examples/supportList"; // Redirige vers la page qui affiche la liste des cours après la suppression
     }
 
+
+
+//    @GetMapping("/lecture/{id}")
+//    public String lecture(@PathVariable("id") String code,Model model) {
+//        Optional<Cours> optionalCours = coursRepository.findById(code);
+//        Cours cours = optionalCours.get();
+//        model.addAttribute("cours", cours);
+//        return "examples/lecture"; // Redirige vers la page qui affiche la liste des cours après la suppression
+//    }
+//    @GetMapping("/deleteLecture/{id}")
+//    public String deleteLecture(@PathVariable("id") String code,Model model) {
+//        coursRepository.deleteById(code);
+//        List<Cours> coursList = (List<Cours>) coursRepository.findAll();
+//        model.addAttribute("coursList", coursList);
+//        return "examples/dashboard"; // Redirige vers la page qui affiche la liste des cours après la suppression
+//    }
+
 }
